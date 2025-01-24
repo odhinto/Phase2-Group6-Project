@@ -130,19 +130,19 @@ We used Tableau to explore the data and established the following insights:
 
      The following are the highest grossing **directors** who consistently attract larger audiences:
     <div align="center">
-        <img src="pictures/highest Grossing directors.png" alt="highest grossing directors" width="800">
+        <img src="pictures/highest Grossing directors.png" alt="image3" width="800">
         <p><em>Highest Grossing Directors</em></p>
     </div>
 
      The following are the highest grossing **producers** who consistently attract larger audiences:
     <div align="center">
-        <img src="pictures/highest Grossing producers.png" alt="highest grossing producers" width="800">
+        <img src="pictures/highest Grossing producers.png" alt="image2" width="800">
         <p><em>Highest Grossing Producers</em></p>
     </div>
 
     The following are the highest grossing **writers** who consistently attract larger audiences:
     <div align="center">
-        <img src="pictures/highest Grossing writers.png" alt="highest grossing writers" width="800">
+        <img src="pictures/highest Grossing writers.png" alt="image1" width="800">
         <p><em>Highest Grossing Writers</em></p>
     </div>
 5. **Average Production Budget vs Average Profitability by Genre:**
