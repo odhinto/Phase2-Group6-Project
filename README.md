@@ -170,9 +170,14 @@ We used Tableau to explore the data and established the following insights:
     
 # **Recommendation**
 These recommendations provide a roadmap for achieving consistent profitability and success in the competitive movie industry.   Among the top 30 most expensive movies, Family, Fantasy, Musicals yield the highest profitability at relatively low budget.
-    <div align="center">
-        <img src="pictures/Average Production Budget vs Average Profitability by Genre.png" alt="highest grossing writers" width="800">
+
+ <div align="center">
+        <img src="pictures/Average Production Budget vs Average Profitability by Genre.png" alt="new image" width="800">
         <p><em>Average Production Budget vs Average Profitability by Genre</em></p>
     </div>
 
+
 For a start, our company should focus on producing this genre.
+
+
+Average Production Budget vs Average Profitability by Genre
