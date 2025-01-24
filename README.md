@@ -57,183 +57,122 @@ We then load the dataset into python as a dataframe and embark on a data underst
 
 ### Data Understanding
 
-The movie database contains the following tables with shown columns:
-
-*   **principals**:
-
-#Explore principal table
-principals_query = """
-                      SELECT *
-                      FROM principals"""
-principals_df = pd.read_sql(principals_query, conn)
-principals_df.to_csv('principals.csv')   #create a principals csv file to facilitate EDA on Tableau
-principals_df.head()
-
-![image](https://github.com/user-attachments/assets/ffd68c86-7102-4032-860d-85dd3800fab2)
-
-The principals table details main people (using their person_id)that were involved with different movies (using the movie_id) and the capacities in which they were involved e.g. director, actor, producer etc. There could be a relationship between these people and the success of the movie in the box office.
-
-*   **persons**:
-  
-#Explore persons table- Trial for collaboration
-persons_query = """
-                      SELECT *
-                      FROM persons"""
-persons_df = pd.read_sql(persons_query, conn)
-persons_df.to_csv('persons.csv')   #create a persons csv file to facilitate EDA on Tableau
-persons_df.head()
-
-![image](https://github.com/user-attachments/assets/66ac232a-c0fb-4b79-a8da-59e75efc6ced)
-
-The persons table details the name, birth year, death year and primary professions of the various people using their person_id. There could be a relationship between the people involved in a movie and the success of the movie in the box office.
- 
-*   **known_for**:
-  
-#Explore known_for table
-known_for_query = """
-                      SELECT *
-                      FROM known_for"""
-known_for_df = pd.read_sql(known_for_query, conn)
-known_for_df.to_csv('known_for.csv')   #create a known_for csv file to facilitate EDA on Tableau
-known_for_df.head()
-
-![image](https://github.com/user-attachments/assets/5bebda41-1b18-483f-ac93-8002a63c8226)
-
-Known_for table details the various movies different people are known for by person_id and movie_id.
-
-*   **directors**:
-
-#Explore directors table
-directors_query = """
-                      SELECT *
-                      FROM directors"""
-directors_df = pd.read_sql(directors_query, conn)
-directors_df.to_csv('directors.csv')   #create a directors csv file to facilitate EDA on Tableau
-directors_df.head()
-
-![image](https://github.com/user-attachments/assets/a30f8dde-24ef-44b3-89a5-9a6da837a707)
-
-Directors table details the various movies and the people they are known for by movie_id and person_id. There could be a relationship between the directors of a movie and the success of the movie in the box office.
-
-*   **writers**:
-
-#Explore writers table
-writers_query = """
-                      SELECT *
-                      FROM writers"""
-writers_df = pd.read_sql(writers_query, conn)
-writers_df.to_csv('writers.csv')   #create a writers csv file to facilitate EDA on Tableau
-writers_df.head()
-
-![image](https://github.com/user-attachments/assets/49ace174-b171-4182-83b1-e8b2e8244d5a)
-
-Writers table details the various movies and their pewriters by movie_id and person_id. There could be a relationship between the writers of a movie and the success of the movie in the box office.
-
-*   **movie_basics**:
-
-#Explore movie_basics table
-movie_query = """
-                      SELECT *
-                      FROM movie_basics"""
-movie_df = pd.read_sql(movie_query, conn)
-movie_df.to_csv('movie.csv')   #create a movies csv file to facilitate EDA on Tableau
-movie_df.head()
-
-![image](https://github.com/user-attachments/assets/b491a681-e270-4208-a14c-83f8ddce34b8)
-
-Movie_basics table details the various movie titles, the year they were released, the run-time minutes and the various genres (there may be need for feature engineering around this aspect). There could be a relationship between these parameters and the success of a movie in the box office.
-
-*   **movie_ratings**:
-
-#Explore movie_ratings table
-movie_ratings_query = """
-                      SELECT *
-                      FROM movie_ratings"""
-movie_ratings_df = pd.read_sql(movie_ratings_query, conn)
-movie_ratings_df.to_csv('movie_ratings.csv')   #create a movies ratings csv file to facilitate EDA on Tableau
-movie_ratings_df.head()
-
-![image](https://github.com/user-attachments/assets/f67cf198-7561-4816-bfb9-c9a05a7018a0)
-
-This table shows the average rating for each movie by movie_id and also the number of votes it received (which could give insight into how many people watched it??). There could be a relationship between these parameters and the success of a movie in the box office.
-
-*   **movie_akas**:
-  
-#Explore movie_akas table
-movie_akas_query = """
-                      SELECT *
-                      FROM movie_akas"""
-movie_akas_df = pd.read_sql(movie_akas_query, conn)
-movie_akas_df.to_csv('movie_akas.csv')   #create a movies_akas csv file to facilitate EDA on Tableau
-movie_akas_df.head()
-
-  ![image](https://github.com/user-attachments/assets/b0070954-a043-40bc-9291-73a28be69b40)
-
-This table shows other movie features e.g. the region, language, type and attributes. There could be a relationship between these features and the success of a movie in the box office.
-
 <div align="center">
     <img src="pictures/movie_data_erd.jpeg" alt="Database Schema" width="800">
-    <p><em>Dirty Makers - Needs Cleaning with Fuzzy Logic</em></p>
+    <p><em>Movie Database Schema</em></p>
 </div>
 
-## **Data Cleaning**
+The movie database contains the following tables with shown columns:
 
-To ensure reliable analysis, the following data cleaning steps were implemented:
+*   **principals**: The principals table details main people (using their person_id)that were involved with different movies (using the movie_id) and the capacities in which they were involved e.g. director, actor, producer etc. There could be a relationship between these people and the success of the movie in the box office.
+![image](https://github.com/user-attachments/assets/ffd68c86-7102-4032-860d-85dd3800fab2)
+*   **persons**: The persons table details the name, birth year, death year and primary professions of the various people using their person_id. There could be a relationship between the people involved in a movie and the success of the movie in the box office.
+![image](https://github.com/user-attachments/assets/66ac232a-c0fb-4b79-a8da-59e75efc6ced)
+*   **known_for**: Known_for table details the various movies different people are known for by person_id and movie_id.
+![image](https://github.com/user-attachments/assets/5bebda41-1b18-483f-ac93-8002a63c8226)
+*   **directors**: Directors table details the various movies and the people they are known for by movie_id and person_id. There could be a relationship between the directors of a movie and the success of the movie in the box office.
 
-1. **Handling Missing Values:**
-   - Replaced missing values in categorical fields (e.g., genre, director) with "Unknown" to retain as much data as possible.
-   - Imputed missing numerical values with the mean or median based on the data distribution.
+    ![image](https://github.com/user-attachments/assets/a30f8dde-24ef-44b3-89a5-9a6da837a707)
 
-2. **Standardization:**
-   - Normalized categorical data to ensure consistent capitalization and formatting.
-   - Removed duplicate rows to avoid skewed insights.
 
-3. **Date Formatting:**
-   - Converted date fields to a uniform datetime format for proper chronological analysis.
+*   **writers**: Writers table details the various movies and their pewriters by movie_id and person_id. There could be a relationship between the writers of a movie and the success of the movie in the box office.
 
-4. **Outlier Detection and Removal:**
-   - Identified and addressed outliers in box office revenue and ratings to enhance prediction accuracy.
+    ![image](https://github.com/user-attachments/assets/49ace174-b171-4182-83b1-e8b2e8244d5a)
+*   **movie_basics**: Movie_basics table details the various movie titles, the year they were released, the run-time minutes and the various genres (there may be need for feature engineering around this aspect). There could be a relationship between these parameters and the success of a movie in the box office.
+![image](https://github.com/user-attachments/assets/b491a681-e270-4208-a14c-83f8ddce34b8)
+*   **movie_ratings**: This table shows the average rating for each movie by movie_id and also the number of votes it received (which could give insight into how many people watched it??). There could be a relationship between these parameters and the success of a movie in the box office.
 
-5. **Feature Engineering:**
-   - Derived new columns (e.g., "profit margin") to facilitate deeper analysis.
-     
+    ![image](https://github.com/user-attachments/assets/f67cf198-7561-4816-bfb9-c9a05a7018a0)
+*   **movie_akas**: This table shows other movie features e.g. the region, language, type and attributes. There could be a relationship between these features and the success of a movie in the box office.
+    ![image](https://github.com/user-attachments/assets/b0070954-a043-40bc-9291-73a28be69b40)
+
 # **Exploratory Data Analysis**
 
-Using the Tableau dashboard, the following insights were derived:
+We used Tableau to explore the data and established the following insights:
 
-1. **Highest Rated Genres and Regions:**
-   - **Drama** and **Action** movies dominate in terms of ratings across all regions.
-   - North America contributes the highest revenue, making it a key focus for studio operations.
 
-2. **Directors and Writers:**
-   - Collaborations involving well-established directors and writers correlate strongly with high box office revenue.
-   - Analyzing director-writer pairings further refined this insight.
+1. **Average Rating Per Genre:**
 
-3. **Revenue Trends:**
-   - Movies released during holiday seasons (summer and Christmas) consistently outperform those released in off-peak periods.
-   - High-budget films tend to yield higher returns, but a significant portion of mid-budget films also shows profitability.
+   Musical, Fantastical and Sci-Fi Genres registered the highest incidence among the top rated genres
+    <div align="center">
+        <img src="pictures/Average Rating By Genre.png" alt="average rating by genre" width="800">
+        <p><em>Average Rating By Genre</em></p>
+    </div>
+2. **Popularity by Genre:**
+
+    Fantasy, Action and Adventure Genres Feature Frequently on the Popularity Meter
+    <div align="center">
+        <img src="pictures/Popularity by Genre.png" alt="popularity by genre" width="800">
+        <p><em>Popularity By Genre</em></p>
+    </div>
+
+3. **Average Profitability by Gentre:**
+
+    Family, Horrors and Thrillers Register High Profitability i.e. profitability = (grossing/production budget) x 100%
+   <div align="center">
+        <img src="pictures/Average Profitability by Genre.png" alt="average profitability by genre" width="800">
+        <p><em>Average Profitability By Genre</em></p>
+    </div>
 
 4. **Casting Insights:**
-   - A-list actors consistently attract larger audiences, but the story quality (as reflected by user reviews) remains a critical factor.
 
-# **Recommendations and Conclusions**
+    The following are the highest grossing **actors** who consistently attract larger audiences:
+    <div align="center">
+        <img src="pictures/highest Grossing Actors.png" alt="highest grossing actors" width="800">
+        <p><em>Highest Grossing Actorse</em></p>
+    </div>
+
+     The following are the highest grossing **actresses** who consistently attract larger audiences:
+    <div align="center">
+        <img src="pictures/highest Grossing actresses.png" alt="highest grossing actresses" width="800">
+        <p><em>Highest Grossing Actresses</em></p>
+    </div>
+
+     The following are the highest grossing **directors** who consistently attract larger audiences:
+    <div align="center">
+        <img src="pictures/highest Grossing directors.png" alt="highest grossing directors" width="800">
+        <p><em>Highest Grossing Directors</em></p>
+    </div>
+
+     The following are the highest grossing **producers** who consistently attract larger audiences:
+    <div align="center">
+        <img src="pictures/highest Grossing producers.png" alt="highest grossing producers" width="800">
+        <p><em>Highest Grossing Producers</em></p>
+    </div>
+
+    The following are the highest grossing **writers** who consistently attract larger audiences:
+    <div align="center">
+        <img src="pictures/highest Grossing writers.png" alt="highest grossing writers" width="800">
+        <p><em>Highest Grossing Writers</em></p>
+    </div>
+5. **Average Production Budget vs Average Profitability by Genre:**
+
+  
+
+# **Conclusion**
 
 1. **Genre Focus:**
-   - Prioritize creating **Drama** and **Action** films targeting North American audiences, as they show the strongest performance metrics.
+   - Focus on highly rated genres 
 
-2. **Seasonal Releases:**
-   - Schedule movie releases during high-demand periods (e.g., summer and holidays) to capitalize on peak audience interest.
-
-3. **Director and Writer Partnerships:**
+2. **Director and Writer Partnerships:**
    - Invest in partnerships with proven directors and writers to enhance the likelihood of success.
 
-4. **Casting Strategy:**
+3. **Casting Strategy:**
    - Include at least one A-list actor in high-budget projects while ensuring strong scripts and storytelling to retain audience satisfaction.
 
 5. **Budget Allocation:**
-   - Focus on mid- to high-budget films with a clear emphasis on maximizing profit margins.
+   - Focus on low- to mid-budget films with a clear emphasis on maximizing profit margins.
 
 6. **Long-Term Strategy:**
    - Continuously analyze audience preferences and emerging trends to adapt to shifting market demands.
 
-These recommendations provide a roadmap for achieving consistent profitability and success in the competitive movie industry.
+
+    
+# **Recommendation**
+These recommendations provide a roadmap for achieving consistent profitability and success in the competitive movie industry.   Among the top 30 most expensive movies, Family, Fantasy, Musicals yield the highest profitability at relatively low budget.
+    <div align="center">
+        <img src="pictures/Average Production Budget vs Average Profitability by Genre.png" alt="highest grossing writers" width="800">
+        <p><em>Average Production Budget vs Average Profitability by Genre</em></p>
+    </div>
+
+For a start, our company should focus on producing this genre.
