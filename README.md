@@ -75,7 +75,7 @@ The principals table details main people (using their person_id)that were involv
 
 *   **persons**:
   
-#Explore persons table
+#Explore persons table- Trial for collaboration
 persons_query = """
                       SELECT *
                       FROM persons"""
