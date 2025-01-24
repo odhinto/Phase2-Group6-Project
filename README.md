@@ -65,11 +65,14 @@ We then load the dataset into python as a dataframe and embark on a data underst
 The movie database contains the following tables with shown columns:
 
 *   **principals**: The principals table details main people (using their person_id)that were involved with different movies (using the movie_id) and the capacities in which they were involved e.g. director, actor, producer etc. There could be a relationship between these people and the success of the movie in the box office.
-![image](https://github.com/user-attachments/assets/ffd68c86-7102-4032-860d-85dd3800fab2)
+
+    ![image](https://github.com/user-attachments/assets/ffd68c86-7102-4032-860d-85dd3800fab2)
 *   **persons**: The persons table details the name, birth year, death year and primary professions of the various people using their person_id. There could be a relationship between the people involved in a movie and the success of the movie in the box office.
-![image](https://github.com/user-attachments/assets/66ac232a-c0fb-4b79-a8da-59e75efc6ced)
+
+    ![image](https://github.com/user-attachments/assets/66ac232a-c0fb-4b79-a8da-59e75efc6ced)
 *   **known_for**: Known_for table details the various movies different people are known for by person_id and movie_id.
-![image](https://github.com/user-attachments/assets/5bebda41-1b18-483f-ac93-8002a63c8226)
+
+    ![image](https://github.com/user-attachments/assets/5bebda41-1b18-483f-ac93-8002a63c8226)
 *   **directors**: Directors table details the various movies and the people they are known for by movie_id and person_id. There could be a relationship between the directors of a movie and the success of the movie in the box office.
 
     ![image](https://github.com/user-attachments/assets/a30f8dde-24ef-44b3-89a5-9a6da837a707)
@@ -119,7 +122,7 @@ We used Tableau to explore the data and established the following insights:
     The following are the highest grossing **actors** who consistently attract larger audiences:
     <div align="center">
         <img src="pictures/highest Grossing Actors.png" alt="highest grossing actors" width="800">
-        <p><em>Highest Grossing Actorse</em></p>
+        <p><em>Highest Grossing Actors</em></p>
     </div>
 
      The following are the highest grossing **actresses** who consistently attract larger audiences:
