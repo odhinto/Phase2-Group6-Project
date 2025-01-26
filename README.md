@@ -121,19 +121,19 @@ We used Tableau to explore the data and established the following insights:
 
     The following are the highest grossing **actors** who consistently attract larger audiences:
     <div align="center">
-        <img src="pictures/actors.png" alt="highest grossing actors" width="800">
+        <img src="pictures/actors.PNG" alt="highest grossing actors" width="800">
         <p><em>Highest Grossing Actors</em></p>
     </div>
 
      The following are the highest grossing **actresses** who consistently attract larger audiences:
     <div align="center">
-        <img src="pictures/actresses.png" alt="highest grossing actresses" width="800">
+        <img src="pictures/actresses.PNG" alt="highest grossing actresses" width="800">
         <p><em>Highest Grossing Actresses</em></p>
     </div>
 
      The following are the highest grossing **directors** who consistently attract larger audiences:
     <div align="center">
-        <img src="pictures/directors.png" alt="image3" width="800">
+        <img src="pictures/directors.PNG" alt="image3" width="800">
         <p><em>Highest Grossing Directors</em></p>
     </div>
 
